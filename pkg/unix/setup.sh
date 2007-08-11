@@ -8,16 +8,6 @@ failed()
     exit 1
 }
 
-find_dreamchess()
-{
-    if [ -f "$1/menu_title.png" ];
-    then
-        install_dir="$1"
-        return 1
-    fi
-    return 0
-}
-
 install_music_pack()
 {
     for dir in '' $copy_dirs;
@@ -40,17 +30,7 @@ echo
 echo "The music pack can either be installed in the DreamChess data directory, or in"
 echo -e "~/.dreamchess\n"
 
-find_dreamchess "/usr/share/dreamchess"
-
-if [ $? -eq 0 ]
-then
-
-    find_dreamchess "/usr/local/share/dreamchess"
-    if [ $? -eq 0 ]
-    then
-        install_dir=~/.dreamchess
-    fi
-fi
+install_dir=~/.dreamchess
 
 copy_dirs=`find data -name 'data' -o -type d -printf '/%P\n'`
 
