@@ -34,7 +34,7 @@ Section
   SetOutPath $INSTDIR
 
   File /oname=License.txt ..\..\LICENSE
-  File /r /x .* ..\..\data\music\*
+  File /r /x .* ..\..\data\*
 
   WriteUninstaller "$INSTDIR\Uninstall.exe"
 
