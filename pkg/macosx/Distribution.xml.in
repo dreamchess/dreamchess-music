@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+    <pkg-ref id="org.dreamchess.Music"/>
+    <title>DreamChess Music $VERSION</title>
+    <license file="LICENSE"/>
+    <options customize="never" require-scripts="false"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="org.dreamchess.Music"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="org.dreamchess.Music" visible="false">
+        <pkg-ref id="org.dreamchess.Music"/>
+    </choice>
+    <pkg-ref id="org.dreamchess.Music" version="$VERSION" onConclusion="none">music.pkg</pkg-ref>
+</installer-gui-script>
